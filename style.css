@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-clr-soft-blue: hsl(215, 51%, 70%);
+  --primary-clr-cyan: hsl(178, 100%, 50%);
+  --main-bg: hsl(217, 54%, 11%);
+  --card-bg: hsl(216, 50%, 16%);
+  --very-dark-blue: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+  --fixed: 375px;
+  --max-width: 1440px;
+  --transition: all 0.3s linear;
+}
+body {
+  font-size: 18px;
+  font-family: 'Outfit', sans-serif;
+  background: var(--main-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+.wrapper {
+  width: 90vw;
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 15px;
+  background: var(--card-bg);
+}
+.img-wrapper {
+  position: relative;
+  transition: var(--transition);
+}
+.view {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font: 2rem;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  color: var(--clr-white);
+  opacity: 0;
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+}
+.img-wrapper:hover .view {
+  opacity: 1;
+  z-index: 2;
+}
+.img-wrapper:hover .inner-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  background: rgba(0, 255, 246, 0.5);
+  z-index: 1;
+}
+
+.main-photo {
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.title {
+  margin: 1.5rem 0;
+  font-size: 2rem;
+  color: var(--white);
+  transition: var(--transition);
+}
+.title:hover {
+  color: var(--primary-clr-cyan);
+}
+.exp {
+  color: var(--primary-clr-soft-blue);
+  letter-spacing: 0.1rem;
+}
+.nft-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--primary-clr-soft-blue);
+  padding: 2rem 0;
+  font-size: 1.5rem;
+}
+.eth {
+  color: var(--primary-clr-cyan);
+}
+.nft-info div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.nft-info .clock {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--primary-clr-soft-blue);
+}
+.clock img {
+  height: 1.75rem;
+  width: 1.75rem;
+  margin-right: 0.3rem;
+}
+
+.nft-info .eth img {
+  height: 1.75rem;
+  margin-right: 0.4rem;
+}
+.profile {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.profile img {
+  height: 2.5rem;
+  width: 2.5rem;
+  display: inline;
+  object-fit: cover;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+}
+.profile span {
+  margin-left: 0.5rem;
+  font-size: 1.3rem;
+}
+.profile:last-child {
+  color: var(--white);
+  transition: var(--transition);
+}
+.profile:last-child:hover {
+  color: var(--primary-clr-cyan);
+}
+.profile span:nth-child(2) {
+  color: var(--primary-clr-soft-blue);
+}
